@@ -9,8 +9,13 @@
 </head>
 <body>
 <div class="main" ng-controller = "MyController">
+    <div class="search">
+        <h1>Artist Directory</h1>
+        <Label>Search: </label>
+        <input ng-model="query" placeholder="Search for artisit" autofocus>
+    </div>
     <ul class="artistlist">
-        <li class="artist cf" ng-repeat="item in artists">
+        <li class="artist cf" ng-repeat="item in artists | filter: query">
             <img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}">
             <div class="info">
                 <h2>{{item.name}}</h2>
